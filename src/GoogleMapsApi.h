@@ -32,13 +32,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #define SSL_PORT 443
 
 
-
 class GoogleMapsApi
 {
   public:
     GoogleMapsApi (String apiKey, Client &client);
     String sendGetToGoogleMaps(String command);
-    String distanceMatrix(String origin, String destination, String departureTime = "", String trafficModel = "" );
+    String distanceMatrix(String origin, String destination, String departureTime = "", String trafficModel = "" , String transitMode = "" );
 
   private:
     //JsonObject * parseUpdates(String response);
