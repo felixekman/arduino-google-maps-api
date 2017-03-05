@@ -80,7 +80,7 @@ String GoogleMapsApi::sendGetToGoogleMaps(String command) {
   return body;
 }
 
-String GoogleMapsApi::distanceMatrix(String origin, String destination, String departureTime, String trafficModel, String transitMode) {
+String GoogleMapsApi::distanceMatrix(String origin, String destination, String departureTime, String trafficModel, String transitMode, String transitType) {
   String command="https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + origin + "&destinations=" + destination; //If you can't find it(for example if you have a custom url) look here: https://www.google-maps.com/account_advanced
   if (departureTime != "") {
     command = command + "&departure_time=" + departureTime;
@@ -89,7 +89,10 @@ String GoogleMapsApi::distanceMatrix(String origin, String destination, String d
     command = command + "&traffic_model=" + trafficModel;
   }
   if (transitMode != "") {
-    command = command + "&transit_mode=" + transitMode;
+    command = command + "&mode=" + transitMode;
+  }
+  if (transitType != "") {
+    command = command + "&transit_mode=" + transitType;
   }
 
   command = command + "&key=" + _apiKey;
