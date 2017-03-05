@@ -37,7 +37,7 @@ class GoogleMapsApi
   public:
     GoogleMapsApi (String apiKey, Client &client);
     String sendGetToGoogleMaps(String command);
-    String distanceMatrix(String origin, String destination, String departureTime = "", String trafficModel = "" , String transitMode = "" );
+    String distanceMatrix(String origin, String destination, String departureTime = "", String trafficModel = "" , String transitMode = "", String transitType = "" );
 
   private:
     //JsonObject * parseUpdates(String response);
